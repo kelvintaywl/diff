@@ -72,13 +72,14 @@ func (c proxy) LatestTag(ctx context.Context, owner, repo string) (string, error
 
 func (c proxy) Repos(ctx context.Context) []GitHubRepo {
 	owner := os.Getenv(domain.GitHubOwner)
-	repos := strings.Split(os.Getenv(domain.GitHubRepos), ",")
-	resp := make([]GitHubRepo, 0, len(repos))
-	for _, repo := range repos {
-		resp = append(resp, GitHubRepo{
+	rs := os.Getenv(domain.GitHubRepos)
+	repoNames := strings.Split(rs, ",")
+	repos := make([]GitHubRepo, 0, len(repoNames))
+	for _, name := range repoNames {
+		repos = append(repos, GitHubRepo{
 			Owner: owner,
-			Repo:  repo,
+			Repo:  name,
 		})
 	}
-	return resp
+	return repos
 }

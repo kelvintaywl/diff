@@ -13,12 +13,12 @@ The makefile is your best friend!
 
 ### Setup
 
-```shell
+```bash
 # setup dependencies
 make dep
 
-# build Docker image
-make docker_build
+# build binary
+make build
 ```
 
 Copy and modify [.env.sample](.env.sample) to your own settings under a `.env` file.
@@ -30,6 +30,14 @@ Copy and modify [.env.sample](.env.sample) to your own settings under a `.env` f
 | `GITHUB_ACCESS_TOKEN` | string value of your GitHub access token, preferably of a bot account |
 
 
-# run image
-make docker_run
+# run
+
+```bash
+make run
+
+open http://localhost:9999
+```
+
+or point your browser to http://localhost:9999 to see the JSON response.
+
 ```

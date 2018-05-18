@@ -32,8 +32,8 @@ docker_build:
 
 .PHONY: run
 run:
-	godotenv @echo "TODO: run binary"
+	GITHUB_ACCESS_TOKEN=$(GITHUB_ACCESS_TOKEN) GITHUB_OWNER=$(GITHUB_OWNER) GITHUB_REPO=$(GITHUB_REPO) ./diff
 
 .PHONY: docker_run
 docker_run:
-	godotenv docker run --rm -p 127.0.0.1:$(PORT):9999 -e GITHUB_ACCESS_TOKEN=$(GITHUB_ACCESS_TOKEN) kelvintaywl/diff:$(IMAGE_TAG)
+	godotenv docker run --rm -p 127.0.0.1:$(PORT):9999 -e GITHUB_ACCESS_TOKEN=$(GITHUB_ACCESS_TOKEN) -e GITHUB_OWNER=$(GITHUB_OWNER) -e GITHUB_REPO=$(GITHUB_REPO) kelvintaywl/diff:$(IMAGE_TAG)
