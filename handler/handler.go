@@ -31,6 +31,7 @@ func DiffListHandler(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 		repo := domain.RepoPayload{
+			Name:                repo.Repo,
 			IsProductionUpdated: cmp.AheadBy <= 0,
 			URL:                 cmp.HTMLURL,
 		}

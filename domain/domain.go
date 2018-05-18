@@ -14,6 +14,7 @@ const (
 type (
 	// RepoPayload ...
 	RepoPayload struct {
+		Name                string `json:"name"`
 		IsProductionUpdated bool   `json:"isProductionUpdated"`
 		URL                 string `json:"url"`
 	}

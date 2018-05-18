@@ -30,14 +30,19 @@ Copy and modify [.env.sample](.env.sample) to your own settings under a `.env` f
 | `GITHUB_ACCESS_TOKEN` | string value of your GitHub access token, preferably of a bot account |
 
 
-# run
+### run on local
 
 ```bash
 make run
+# or alternatively, in a verbose manner
+
+GITHUB_ACCESS_TOKEN=yourToken GITHUB_OWNER=handler GITHUB_REPO=repo1,repo2 ./diff
 
 open http://localhost:9999
 ```
 
 or point your browser to http://localhost:9999 to see the JSON response.
 
-```
+### Example response
+
+See [example_output.json](example_output.json)
