@@ -29,6 +29,10 @@ Copy and modify [.env.sample](.env.sample) to your own settings under a `.env` f
 | `GITHUB_REPO` | comma-separated string value of repo names, e.g., `repo1,repo2` |
 | `GITHUB_ACCESS_TOKEN` | string value of your GitHub access token, preferably of a bot account |
 
+### Docker
+
+Available as a Docker image at: https://hub.docker.com/r/kelvintaywl/diff/
+
 
 ### run on local
 
